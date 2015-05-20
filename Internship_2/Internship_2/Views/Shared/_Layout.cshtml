@@ -25,15 +25,19 @@
                     </div>
                     <div class="navbar-collapse collapse" collapse="navbarProperties.isCollapsed">
                         <ul class="nav navbar-nav">
-                            <li><a href="/Home/Index">LOGO</a></li>                  <!--Insert Logo Image here-->
+                            <li>@Html.ActionLink("LOGO","Index","Home")</li>                  <!--Insert Logo Image here-->
                             <li>+91 7259 28 0001</li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/Home/AboutUs">About Us</a></li>
-                            <li><a href="/Home/HowItWorks">How It Works</a></li>
-                            <li><a href="/Account/Login">Login</a></li>
-                            <li><a href="/Account/Buy">Buy</a></li>
-                            <li><a href="/Account/Sell" class="myButton">Sell Your Car</a></li>
+                            <li>@Html.ActionLink("About Us","AboutUs","Home")</li>
+                            <li>@Html.ActionLink("How It Works","HowItWorks","Home")</li>
+                            <li>@Html.ActionLink("Login","Login","Account")</li>
+                            <li>@Html.ActionLink("Buy","Buy","Account")</li>
+                            <li>
+                            <form action="/Account/Sell">
+                                <input type="submit" value="Sell Your Car" class="myButton" />
+                                </form>
+                            </li> 
                         </ul>
                     </div>
                 </div>
@@ -45,36 +49,36 @@
 
         @RenderBody()
         <hr />
-        <footer style="width:100%;height:250px">
+        <footer  style="width:100%;height:250px">
             <div style="float: left; width: 25%;">
-                <ul>
+                <ul style="list-style-type:none">
                     <li><h3>Overview</h3></li>
-                    <li><a href="/Home/Press">Press</a></li>                        
-                    <li><a href="/Account/Sell">Sell A Car</a></li>
-                    <li><a href="/Account/Buy">Buy A Car</a></li>
-                    
+                    <li>@Html.ActionLink("Press","Press","Home")</li>
+                    <li>@Html.ActionLink("Sell A Car","Sell","Account")</li>
+                    <li>@Html.ActionLink("Buy A Car","Buy","Account")</li>
+
                 </ul>
             </div>
             <div style="float: left; width: 25%;">
-                <ul>
+                <ul style="list-style-type:none">
                     <li><h3>DriveOJoy</h3></li>
-                    <li><a href="/Home/AboutUs">About Us</a></li>
-                    <li><a href="/Home/Jobs">Jobs</a></li>
-                    <li><a href="/Home/Blog">Blog</a></li>
-                    <li><a href="/Home/PrivacyPolicy">Privacy Policy</a></li>
-                    
+                    <li>@Html.ActionLink("About Us", "AboutUs","Home")</li>
+                    <li>@Html.ActionLink("Jobs","Jobs","Home")</li>
+                    <li>@Html.ActionLink("Blog","Blog","Home")</li>
+                    <li>@Html.ActionLink("Privacy Policy","PrivacyPolicy","Home")</li>
+
                 </ul>
             </div>
             <div style="float: left; width: 25%;">
-                <ul>
+                <ul style="list-style-type:none">;
                     <li><h3>Support</h3></li>
-                    <li><a href="/Home/ContactUs">Contact Us</a></li>
+                    <li>@Html.ActionLink("Contact Us","ContactUs","Home")</li>
                     <li>Call+91 7259280001</li>
 
                 </ul>
             </div>
-            <div style="float: right; width: 25%;">
-                <ul>
+            <div style="float: right; width: 25%; padding-top:25px;">
+                <ul style="list-style-type:none">
                     <li><a href="https://support@driveojoy.com/">https://support@driveojoy.com/</a></li>
                     <li><a href="https://www.facebook.com/driveojoy">https://www.facebook.com/driveojoy</a></li>
                     <li><a href="https://twitter.com/driveojoy">https://twitter.com/driveojoy</a></li>

@@ -18,6 +18,22 @@ namespace Internship_2
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(null,
+            "{loaction}/{make}/{bodytype}/{model}",  
+
+              new RouteValueDictionary
+                {{"loaction", "Bangalore"},
+                {"make","Blah"},            //DEFAULTS SUBJECT TO CHANGE           
+                {"bodytype","Bleep"},        //MODIFY THIS
+                {"model", "Bing"}},
+            
+                new
+            {
+                controller = "Account",
+                Action = "Buy",
+              
+            }
+                );
         }
     }
 }
