@@ -11,32 +11,79 @@ namespace Internship_2.Controllers
     {
         public ActionResult Index()
         {
-            List<SelectListItem> locations = new List<SelectListItem>();
-            locations.Add(new SelectListItem { Text = "Bangalore", Value = "MyId1", Selected = true });
-            locations.Add(new SelectListItem { Text = "Chennai", Value = "MyId2" });
+            var model = new BuyViewModel();
+            model.LocationFilter = GetLocations();
+            model.MakeFilter = GetMakes();
+            model.BodyTypeFilter = GetBodyTypes();
+            model.ModelFilter = GetModels();
 
+            return View(model);
+        }
 
-            List<SelectListItem> makes = new List<SelectListItem>();
-            makes.Add(new SelectListItem { Text = "Blah", Value = "MyId1", Selected = true });
-            makes.Add(new SelectListItem { Text = "Bleh", Value = "MyId2" });
-
-            List<SelectListItem> bodytypes = new List<SelectListItem>();
-            bodytypes.Add(new SelectListItem { Text = "Bleep", Value = "MyId1", Selected = true });
-            bodytypes.Add(new SelectListItem { Text = "Bloop", Value = "MyId2" });
-
-            List<SelectListItem> models = new List<SelectListItem>();
-            models.Add(new SelectListItem { Text = "Bing", Value = "MyId1", Selected = true });
-            models.Add(new SelectListItem { Text = "Bang", Value = "MyId2" });
-
-            var model = new BuyViewModel
-            {
-                _locations = locations,
-                _makes = makes,
-                _bodytypes = bodytypes,
-                _models = models
+        private IEnumerable<SelectListItem> GetLocations()
+        {
+            List<SelectListItem> list = new List<SelectListItem>() {
+                new SelectListItem(){ Value="1", Text="Bangalore"},
+                new SelectListItem(){ Value="2", Text="Chennai"},
+                new SelectListItem(){ Value="3", Text="Hyderabad"},
+                new SelectListItem(){ Value="4", Text="Mumbai"},
             };
 
-            return View(model);                                  //This view has to be changed 
+            return list;
+        }
+
+        private IEnumerable<SelectListItem> GetMakes()
+        {
+            List<SelectListItem> list = new List<SelectListItem>() {
+                new SelectListItem(){ Value="1", Text="BMW"},
+                new SelectListItem(){ Value="2", Text="AUDI"},
+                new SelectListItem(){ Value="3", Text="JAGUAR"},
+                new SelectListItem(){ Value="4", Text="BENTLY"},
+            };
+
+            return list;
+        }
+
+        private IEnumerable<SelectListItem> GetBodyTypes()
+        {
+            List<SelectListItem> list = new List<SelectListItem>() {
+                new SelectListItem(){ Value="1", Text="SUV"},
+                new SelectListItem(){ Value="2", Text="Convertible"},
+                new SelectListItem(){ Value="3", Text="Sports"},
+                new SelectListItem(){ Value="4", Text="Automatic"},
+            };
+
+            return list;
+        }
+
+        private IEnumerable<SelectListItem> GetModels()
+        {
+            List<SelectListItem> list = new List<SelectListItem>() {
+                new SelectListItem(){ Value="1", Text="Blah"},
+                new SelectListItem(){ Value="2", Text="Bloop"},
+                new SelectListItem(){ Value="3", Text="Bleep"},
+                new SelectListItem(){ Value="4", Text="BadumTish"},
+            };
+
+            return list;
+        }
+
+
+        [HttpPost]
+        public ActionResult BrowseCars(BuyViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Send thequery to DB
+            }
+            return RedirectToAction("Index", "Buy", new
+            {
+                LocationID = model.SelectedLocationId,
+                MakeID = model.SelectedMakeId,
+                BodyTypeID = model.SelectedBodyTypeId,
+                ModelID = model.SelectedModelId
+
+            });
         }
 
         public ActionResult AboutUs()

@@ -60,37 +60,6 @@ namespace Internship_2.Controllers
             
             return View();
         }
-        [AllowAnonymous]
-        [HttpPost]
-        [ActionName("Buy")]
-        public ActionResult BuyPost(
-            string location,
-            string make,
-            string bodytype,
-            string model)
-        {
-            return Redirect(@"~\" + location + "\\" + make + "\\" + bodytype + "\\" + model);
-        }
-
-        [HttpGet]
-    public ActionResult Buy(
-            string location,
-            string make,
-            string bodytype,
-            string model)
-    {
-      //... actual code ...
-            
-        return View();    //Strong typed to BuyViewModel
-    }
-      
-
-
-        [AllowAnonymous]
-        public ActionResult Sell()
-        {
-
-            return View();
-        }
+     
     }
 }
