@@ -1,0 +1,12 @@
+﻿@model Internship_2.Models.CarImageModel
+
+@{
+    var d = (from i in Model select i.Description).ToArray();
+    for (var i = 0; i < d.Length; i++)
+    {
+        if (d[i].Contains("YearRangeFilter"))
+        {
+            //CODE TO SORT
+        }
+    }
+}

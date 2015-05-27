@@ -1,1 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<images>
+  <image>
+    <filename>AUDI.jpg</filename>
+    <description>Audi</description>
+  </image>
+  <image>
+    <filename>BMW.jpg</filename>          
+    <description>BMW</description>
+  </image>
+  <image>
+    <filename>BENTLEY.jpg</filename>
+    <description>Bentley</description>
+  </image>
+  <image>
+    <filename>JAGUAR.jpg</filename>
+    <description>Jaguar</description>
+  </image>
+</images>

@@ -29,6 +29,9 @@ namespace Internship_2
             bundles.Add(new ScriptBundle("~/bundles/Internship_2")
             .IncludeDirectory("~/Images", "*.jpg"));
 
+            bundles.Add(new ScriptBundle("~/bundles/BuyPageApp")
+    .IncludeDirectory("~/Scripts/Controllers", "*.js")
+    .Include("~/Scripts/BuyPageController.js"));
         }
     }
 }

@@ -168,6 +168,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BodyType.cs" />
     <Compile Include="Models\BuyViewModel.cs" />
+    <Compile Include="Models\CarImage.cs" />
+    <Compile Include="Models\CarImageModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Make.cs" />
@@ -183,15 +185,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\AUDI.jpg" />
+    <Content Include="Images\BENTLEY.jpg" />
+    <Content Include="Images\BMW.jpg" />
     <Content Include="Images\car3.0.jpg" />
     <Content Include="Images\car4.0.jpg" />
     <Content Include="Images\cloud.jpg" />
     <Content Include="Images\grandcanyon.jpg" />
+    <Content Include="Images\ImageMetaData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\JAGUAR.jpg" />
     <Content Include="Images\rocket.jpg" />
     <Content Include="Images\vintage-and-classic-cars-24v.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\BuyPageApp.js" />
+    <Content Include="Scripts\Controllers\BuyPageController.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -225,6 +236,12 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Sell\Index.cshtml" />
     <Content Include="Views\Buy\Index.cshtml" />
+    <Content Include="Views\Buy\CityFilter.cshtml" />
+    <Content Include="Views\Buy\BudgetRangeFilter.cshtml" />
+    <Content Include="Views\Buy\YearRangeFilter.cshtml" />
+    <Content Include="Views\Buy\MakeFilter.cshtml" />
+    <Content Include="Views\Buy\ColorFilter.cshtml" />
+    <Content Include="Views\Buy\KMRangeFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
